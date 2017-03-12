@@ -1,8 +1,8 @@
 package com.example.administrator.pointinfos.presenter;
 
+import com.example.administrator.pointinfos.presenter.api.ResponseInfoAPI;
 import com.example.administrator.pointinfos.utils.Constant;
 
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -14,11 +14,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class BasePresenter {
 
 
+    protected static ResponseInfoAPI responseInfoAPI;
+
     public BasePresenter() {
-        Retrofit.Builder builder=new Retrofit.Builder();
-        builder.baseUrl(Constant.BASEURL);
-        builder.addConverterFactory(GsonConverterFactory.create());//Gson解析
-        Retrofit retrofit=builder.build();
-        api=retrofit.create(ResponseInfoAPI.class);
+        if (responseInfoAPI==null) {
+            Retrofit retrofit = new Retrofit.Builder().baseUrl(Constant.BASEURL).addConverterFactory(GsonConverterFactory.create()).build();
+            responseInfoAPI = retrofit.create(ResponseInfoAPI.class);
+        }
     }
 }

@@ -6,5 +6,6 @@ package com.example.administrator.pointinfos.utils;
 
 public interface Constant {
         //每日一文api
-    String BASEURL="https://github.com/jokermonn/-Api/blob/master/OneArticle.md";
+    String BASEURL="http://m.maoyan.com/movie/";
+    String EVERYDAYAPI="list.json";
 }
