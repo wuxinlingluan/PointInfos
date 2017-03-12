@@ -3,16 +3,21 @@ package com.example.administrator.pointinfos.ui.activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.example.administrator.pointinfos.R;
+import com.example.administrator.pointinfos.ui.fragment.BookFragment;
+import com.example.administrator.pointinfos.ui.fragment.FilmFragment;
+import com.example.administrator.pointinfos.ui.fragment.HomeFragment;
+import com.example.administrator.pointinfos.ui.fragment.MeFragment;
 
 public class MainActivity extends AppCompatActivity {
-
-    private TextView mTextMessage;
-
+    private HomeFragment homeFragment;
+    private FilmFragment filmFragment;
+    private BookFragment bookFragment;
+    private MeFragment    meFragment;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -20,15 +25,16 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    initFragmentHome();
                     return true;
                 case R.id.navigation_film:
-                    mTextMessage.setText(R.string.title_film);
+                    initFragmentFilm();
                     return true;
                 case R.id.navigation_book:
-                    mTextMessage.setText(R.string.title_book);
+                    initFragmentBook();
+                    return true;
                 case R.id.navigation_me:
-                    mTextMessage.setText(R.string.title_me);
+                     initFragmentMe();
                     return true;
             }
             return false;
@@ -40,10 +46,89 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        init();
     }
-
+    /**
+     * 初始化
+     * */
+    private void init() {
+        initFragmentHome();
+    }
+       /**
+        * 初始化首页
+        * */
+        private void initFragmentHome(){
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            if(homeFragment == null){
+                homeFragment = new HomeFragment();
+                transaction.add(R.id.content, homeFragment);
+            }
+            //隐藏所有fragment
+            hideFragment(transaction);
+            //显示需要显示的fragment
+            transaction.show(homeFragment);
+            transaction.commit();
+        }
+        /**
+         * 初始化电影界面
+         * */
+    private void initFragmentFilm(){
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        if(filmFragment == null){
+            filmFragment = new FilmFragment();
+            transaction.add(R.id.content, filmFragment);
+        }
+        //隐藏所有fragment
+        hideFragment(transaction);
+        //显示需要显示的fragment
+        transaction.show(filmFragment);
+        transaction.commit();
+    }
+    /**
+     * 初始化阅读界面
+     * */
+    private void initFragmentBook(){
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        if(bookFragment == null){
+            bookFragment = new BookFragment();
+            transaction.add(R.id.content, bookFragment);
+        }
+        //隐藏所有fragment
+        hideFragment(transaction);
+        //显示需要显示的fragment
+        transaction.show(bookFragment);
+        transaction.commit();
+    }
+    /**
+     * 初始化我的界面
+     * */
+    private void initFragmentMe(){
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        if(meFragment == null){
+            meFragment = new MeFragment();
+            transaction.add(R.id.content, meFragment);
+        }
+        //隐藏所有fragment
+        hideFragment(transaction);
+        //显示需要显示的fragment
+        transaction.show(meFragment);
+        transaction.commit();
+    }
+    //隐藏所有的fragment
+    private void hideFragment(FragmentTransaction transaction){
+        if(homeFragment != null){
+            transaction.hide(homeFragment);
+        }
+        if(filmFragment != null){
+            transaction.hide(filmFragment);
+        }
+        if(bookFragment != null){
+            transaction.hide(bookFragment);
+        }
+        if(meFragment != null){
+            transaction.hide(meFragment);
+        }
+    }
 }

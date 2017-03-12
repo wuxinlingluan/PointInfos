@@ -5,4 +5,7 @@
     <string name="title_film">电影</string>
     <string name="title_book">阅读</string>
     <string name="title_me">我的</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">主页</string>
 </resources>
