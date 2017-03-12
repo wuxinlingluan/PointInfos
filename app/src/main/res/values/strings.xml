@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">点点资讯</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">主页</string>
+    <string name="title_film">电影</string>
+    <string name="title_book">阅读</string>
+    <string name="title_me">我的</string>
 </resources>
