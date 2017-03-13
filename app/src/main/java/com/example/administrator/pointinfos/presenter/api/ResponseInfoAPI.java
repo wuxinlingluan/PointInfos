@@ -5,12 +5,13 @@ import com.example.administrator.pointinfos.utils.Constant;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 /**
  * Created by Administrator on 2017/3/12.
  */
 
 public interface ResponseInfoAPI {
-    @GET(Constant.BASEURL)
-    Call<EverydayReadBean> getbookinfo();
+    @GET(Constant.EVERYDAYAPI)
+    Call<EverydayReadBean> getbookinfo(@Query("dev") String dev);
 }
