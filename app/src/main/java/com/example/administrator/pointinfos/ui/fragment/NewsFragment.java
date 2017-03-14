@@ -10,12 +10,12 @@ import com.example.administrator.pointinfos.R;
 import com.example.administrator.pointinfos.ui.base.BaseFragment;
 
 
-public class MeFragment extends BaseFragment {
+public class NewsFragment extends BaseFragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, null);
+        View view = inflater.inflate(R.layout.fragment_news, null);
         return view;
 
     }
