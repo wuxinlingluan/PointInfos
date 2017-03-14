@@ -46,4 +46,5 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     testCompile 'junit:junit:4.12'
     apt 'com.google.dagger:dagger-compiler:2.6'
+    compile 'com.lcodecorex:tkrefreshlayout:1.0.6'
 }
