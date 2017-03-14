@@ -6,7 +6,6 @@ import android.support.v7.widget.AppCompatTextView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.administrator.pointinfos.R;
 import com.example.administrator.pointinfos.ui.base.BaseFragment;
@@ -34,7 +33,7 @@ public class FilmFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ((TextView) view.findViewById(R.id.tv)).setText("电影");
+    
     }
 
     @Override

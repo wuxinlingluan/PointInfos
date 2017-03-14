@@ -10,6 +10,7 @@ import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.example.administrator.pointinfos.R;
 import com.example.administrator.pointinfos.dagger.componet.fragment.DaggerBookFragmentComponet;
@@ -23,7 +24,7 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-
+//每日一文界面
 public class BookFragment extends BaseFragment {
 
     @Inject
@@ -36,26 +37,27 @@ public class BookFragment extends BaseFragment {
     AppCompatTextView tvContent;
     @InjectView(R.id.tv_wc)
     AppCompatTextView tvWc;
+    @InjectView(R.id.progressbar)
+    ProgressBar progressbar;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_book, null);
         DaggerBookFragmentComponet.builder().bookFragmentModule(new BookFragmentModule(this)).build().in(this);
-        ButterKnife.inject(this, view);
+        ButterKnife.inject(this, view);//绑定
         return view;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //   ((TextView)view.findViewById(R.id.tv)).setText("阅读");
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        bookFragmentPresenter.getDate();
+        bookFragmentPresenter.getDate();//获取数据
     }
 
     @Override
@@ -64,7 +66,7 @@ public class BookFragment extends BaseFragment {
         ButterKnife.reset(this);
     }
 
-
+    //设置数据
     @TargetApi(Build.VERSION_CODES.N)
     public void success(EverydayReadBean body) {
         EverydayReadBean.DataBean data = body.getData();
@@ -72,11 +74,11 @@ public class BookFragment extends BaseFragment {
         String content = data.getContent();//内容
         String title = data.getTitle();//名称
         int wc = data.getWc();//字数
-
+        progressbar.setVisibility(View.GONE);//隐藏 加载框
         tvTitle.setText(title);
         tvWriter.setText(author);
         Spanned spanned = Html.fromHtml(content);
         tvContent.setText(spanned);
-        tvWc.setText("全书完 共"+wc+"字");
+        tvWc.setText("全书完 共" + wc + "字");
     }
 }
