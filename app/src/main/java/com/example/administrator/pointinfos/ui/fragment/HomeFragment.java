@@ -13,13 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.administrator.pointinfos.R;
-import com.example.administrator.pointinfos.ui.base.BaseFragment;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 //主页界面
-public class HomeFragment extends BaseFragment{
+public class HomeFragment extends Fragment{
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
     @InjectView(R.id.tabs)

@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatTextView;
 import android.text.Html;
 import android.text.Spanned;
@@ -17,7 +18,6 @@ import com.example.administrator.pointinfos.dagger.componet.fragment.DaggerBookF
 import com.example.administrator.pointinfos.dagger.module.fragment.BookFragmentModule;
 import com.example.administrator.pointinfos.model.net.bean.EverydayReadBean;
 import com.example.administrator.pointinfos.presenter.fragment.BookFragmentPresenter;
-import com.example.administrator.pointinfos.ui.base.BaseFragment;
 
 import javax.inject.Inject;
 
@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 //每日一文界面
-public class BookFragment extends BaseFragment {
+public class BookFragment extends Fragment {
 
     @Inject
     BookFragmentPresenter bookFragmentPresenter;
