@@ -2,6 +2,7 @@ package com.example.administrator.pointinfos.ui.fragment;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -58,10 +59,16 @@ public class NewsFragment extends BaseFragment {
         DaggerNewsFragmentComponet.builder().newsFragmentModule(new NewsFragmentModule(this)).build().in(this);
         return rootView;
     }
-    //获取数据
+//    //获取数据
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        newsFragmentPresenter.getDate();//获取数据
+//    }
+
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         newsFragmentPresenter.getDate();//获取数据
     }
 

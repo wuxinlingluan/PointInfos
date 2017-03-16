@@ -9,5 +9,9 @@ public interface Constant {
     String EVERYDAYAPI="https://interface.meiriyiwen.com/article/today";
 
     String BASEURL="https://interface.meiriyiwen.com/";
+    //新闻API
     String NEWSAPI="http://v.juhe.cn/toutiao/index";
+    //微信API
+    String WECHARTAPI="http://v.juhe.cn/weixin/query";
+
 }

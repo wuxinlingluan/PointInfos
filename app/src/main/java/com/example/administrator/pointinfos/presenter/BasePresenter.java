@@ -19,7 +19,6 @@ public class BasePresenter {
     public BasePresenter() {
         if (responseInfoAPI==null) {
           Retrofit retrofit = new Retrofit.Builder().baseUrl(Constant.BASEURL).addConverterFactory(GsonConverterFactory.create()).build();
-
             responseInfoAPI = retrofit.create(ResponseInfoAPI.class);
         }
     }
