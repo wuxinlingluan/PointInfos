@@ -1,6 +1,7 @@
 package com.example.administrator.pointinfos.presenter.api;
 
 import com.example.administrator.pointinfos.model.net.bean.EverydayReadBean;
+import com.example.administrator.pointinfos.model.net.bean.NewsBean;
 import com.example.administrator.pointinfos.utils.Constant;
 
 import retrofit2.Call;
@@ -14,4 +15,7 @@ import retrofit2.http.Query;
 public interface ResponseInfoAPI {
     @GET(Constant.EVERYDAYAPI)
     Call<EverydayReadBean> getbookinfo(@Query("dev") String dev);
+    @GET(Constant.NEWSAPI)
+    Call<NewsBean> getnewsinfo(@Query("key") String key);
+
 }

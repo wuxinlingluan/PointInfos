@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由透明到可见进入式 -->
+<set xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <alpha
+        android:duration="200"
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0" />
+
+</set>
