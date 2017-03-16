@@ -24,6 +24,7 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
+
 //每日一文界面
 public class BookFragment extends Fragment {
 

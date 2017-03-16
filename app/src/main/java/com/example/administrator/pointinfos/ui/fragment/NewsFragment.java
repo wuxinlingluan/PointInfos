@@ -13,6 +13,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.example.administrator.pointinfos.R;
+import com.example.administrator.pointinfos.dagger.componet.fragment.DaggerNewsFragmentComponet;
+import com.example.administrator.pointinfos.dagger.module.fragment.NewsFragmentModule;
 import com.example.administrator.pointinfos.model.net.bean.NewsBean;
 import com.example.administrator.pointinfos.presenter.fragment.NewsFragmentPresenter;
 import com.example.administrator.pointinfos.ui.activity.NewsWebActivity;
@@ -41,7 +43,7 @@ public class NewsFragment extends BaseFragment {
     @InjectView(R.id.tkr)
     TwinklingRefreshLayout tkr;
     @Inject
-    NewsFragmentPresenter newsFragmentPresenter=new NewsFragmentPresenter(this);
+    NewsFragmentPresenter newsFragmentPresenter;
     @Override
     protected int setLayoutResouceId() {
         return R.layout.fragment_news;
@@ -53,6 +55,7 @@ public class NewsFragment extends BaseFragment {
         ButterKnife.inject(this, rootView);
         rcl.setLayoutManager(new LinearLayoutManager(getActivity()));
         rcl.setHasFixedSize(true);
+        DaggerNewsFragmentComponet.builder().newsFragmentModule(new NewsFragmentModule(this)).build().in(this);
         return rootView;
     }
     //获取数据
