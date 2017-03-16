@@ -8,15 +8,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.example.administrator.pointinfos.R;
-import com.example.administrator.pointinfos.ui.fragment.BookFragment;
 import com.example.administrator.pointinfos.ui.fragment.FilmFragment;
 import com.example.administrator.pointinfos.ui.fragment.HomeFragment;
 import com.example.administrator.pointinfos.ui.fragment.MeFragment;
+import com.example.administrator.pointinfos.ui.fragment.XiFragment;
 
 public class MainActivity extends AppCompatActivity {
     private HomeFragment homeFragment;
     private FilmFragment filmFragment;
-    private BookFragment bookFragment;
+    private XiFragment xiFragment;
     private MeFragment    meFragment;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -91,14 +91,14 @@ public class MainActivity extends AppCompatActivity {
      * */
     private void initFragmentBook(){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        if(bookFragment == null){
-            bookFragment = new BookFragment();
-            transaction.add(R.id.content, bookFragment);
+        if(xiFragment == null){
+            xiFragment = new XiFragment();
+            transaction.add(R.id.content, xiFragment);
         }
         //隐藏所有fragment
         hideFragment(transaction);
         //显示需要显示的fragment
-        transaction.show(bookFragment);
+        transaction.show(xiFragment);
         transaction.commit();
     }
     /**
@@ -124,8 +124,8 @@ public class MainActivity extends AppCompatActivity {
         if(filmFragment != null){
             transaction.hide(filmFragment);
         }
-        if(bookFragment != null){
-            transaction.hide(bookFragment);
+        if(xiFragment != null){
+            transaction.hide(xiFragment);
         }
         if(meFragment != null){
             transaction.hide(meFragment);

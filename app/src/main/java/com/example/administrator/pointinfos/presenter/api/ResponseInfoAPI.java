@@ -20,4 +20,5 @@ public interface ResponseInfoAPI {
     Call<NewsBean> getnewsinfo(@Query("key") String key);
     @GET(Constant.WECHARTAPI)
     Call<WeChartBean> getwechartinfo(@Query("key") String key,@Query("pno") String pageNum);
+
 }

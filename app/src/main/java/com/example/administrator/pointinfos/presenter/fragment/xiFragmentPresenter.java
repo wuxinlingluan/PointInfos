@@ -12,22 +12,22 @@ import retrofit2.Response;
  * Created by Administrator on 2017/3/12.
  */
 
-public class NewsFragmentPresenter extends BasePresenter {
+public class xiFragmentPresenter extends BasePresenter {
     private NewsFragment fragment;
 
-    public NewsFragmentPresenter(NewsFragment fragment) {
+    public xiFragmentPresenter(NewsFragment fragment) {
         this.fragment = fragment;
     }
 
     //获取新闻数据
-    public  void getDate(){
+    public static void getDate(){
         Call<NewsBean> getnewsinfo = responseInfoAPI.getnewsinfo("1b4862c0040bf72d8079a70d7a3386ba");
         getnewsinfo.enqueue(new Callback<NewsBean>() {
             @Override
             public void onResponse(Call<NewsBean> call, Response<NewsBean> response) {
                 //成功
                 if (response!=null&&response.isSuccessful()){
-                    fragment.success(response.body().getResult());
+
                 }
             }
 

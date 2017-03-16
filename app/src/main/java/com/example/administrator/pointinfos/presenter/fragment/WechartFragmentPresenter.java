@@ -1,7 +1,7 @@
 package com.example.administrator.pointinfos.presenter.fragment;
 
 import com.example.administrator.pointinfos.model.net.bean.WeChartBean;
-import com.example.administrator.pointinfos.presenter.BasePresenter;
+import com.example.administrator.pointinfos.presenter.base.BasePresenter;
 import com.example.administrator.pointinfos.ui.fragment.WechartFragment;
 
 import retrofit2.Call;

@@ -1,4 +1,4 @@
-package com.example.administrator.pointinfos.presenter;
+package com.example.administrator.pointinfos.presenter.base;
 
 import com.example.administrator.pointinfos.presenter.api.ResponseInfoAPI;
 import com.example.administrator.pointinfos.utils.Constant;
