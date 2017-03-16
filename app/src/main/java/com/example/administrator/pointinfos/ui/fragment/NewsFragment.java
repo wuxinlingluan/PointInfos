@@ -59,13 +59,6 @@ public class NewsFragment extends BaseFragment {
         DaggerNewsFragmentComponet.builder().newsFragmentModule(new NewsFragmentModule(this)).build().in(this);
         return rootView;
     }
-//    //获取数据
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        newsFragmentPresenter.getDate();//获取数据
-//    }
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);

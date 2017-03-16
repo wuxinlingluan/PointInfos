@@ -13,6 +13,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.example.administrator.pointinfos.R;
+import com.example.administrator.pointinfos.dagger.componet.fragment.DaggerWechartFragmentComponet;
+import com.example.administrator.pointinfos.dagger.module.fragment.WechartFragmentModule;
 import com.example.administrator.pointinfos.model.net.bean.WeChartBean;
 import com.example.administrator.pointinfos.presenter.fragment.WechartFragmentPresenter;
 import com.example.administrator.pointinfos.ui.activity.NewsWebActivity;
@@ -38,7 +40,7 @@ public class  WechartFragment extends BaseFragment {
     private CommonAdapter<WeChartBean.ResultBean.ListBean> commonAdapter;
     private List<WeChartBean.ResultBean.ListBean> mDatas=new ArrayList<>();
     @Inject
-    WechartFragmentPresenter wechartFragmentPresenter=new WechartFragmentPresenter(this);
+    WechartFragmentPresenter wechartFragmentPresenter;
     @InjectView(R.id.rcl)
     RecyclerView rcl;
     @InjectView(R.id.tkr)
@@ -55,6 +57,7 @@ public class  WechartFragment extends BaseFragment {
         ButterKnife.inject(this, rootView);
         rcl.setLayoutManager(new LinearLayoutManager(getActivity()));
         rcl.setHasFixedSize(true);
+        DaggerWechartFragmentComponet.builder().wechartFragmentModule(new WechartFragmentModule(this)).build().in(this);//获取对象
         return rootView;
     }
     //获取数据
