@@ -13,5 +13,6 @@ public interface Constant {
     String NEWSAPI="http://v.juhe.cn/toutiao/index";
     //微信API
     String WECHARTAPI="http://v.juhe.cn/weixin/query";
-
+    //一席API
+    String XIAPI="http://api.yixi.tv/api/v1/album";
 }

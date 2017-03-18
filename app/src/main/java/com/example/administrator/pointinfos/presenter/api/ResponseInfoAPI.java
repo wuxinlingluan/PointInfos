@@ -3,6 +3,7 @@ package com.example.administrator.pointinfos.presenter.api;
 import com.example.administrator.pointinfos.model.net.bean.EverydayReadBean;
 import com.example.administrator.pointinfos.model.net.bean.NewsBean;
 import com.example.administrator.pointinfos.model.net.bean.WeChartBean;
+import com.example.administrator.pointinfos.model.net.bean.YiXiBean;
 import com.example.administrator.pointinfos.utils.Constant;
 
 import retrofit2.Call;
@@ -20,5 +21,6 @@ public interface ResponseInfoAPI {
     Call<NewsBean> getnewsinfo(@Query("key") String key);
     @GET(Constant.WECHARTAPI)
     Call<WeChartBean> getwechartinfo(@Query("key") String key,@Query("pno") String pageNum);
-
+    @GET(Constant.XIAPI)
+    Call<YiXiBean> getyixiInfo();
 }
