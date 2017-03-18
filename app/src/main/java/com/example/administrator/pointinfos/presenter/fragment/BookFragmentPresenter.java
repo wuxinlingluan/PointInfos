@@ -19,6 +19,8 @@ public class BookFragmentPresenter extends BasePresenter {
         this.fragment = fragment;
     }
 
+
+
     //获取数据
     public  void getDate(){
         Call<EverydayReadBean> getbookinfo = responseInfoAPI.getbookinfo("1");

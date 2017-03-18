@@ -13,6 +13,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.example.administrator.pointinfos.R;
+import com.example.administrator.pointinfos.dagger.componet.fragment.DaggerYiXiFragmentComponet;
+import com.example.administrator.pointinfos.dagger.module.fragment.YiXiFragmentModule;
 import com.example.administrator.pointinfos.model.net.bean.YiXiBean;
 import com.example.administrator.pointinfos.presenter.fragment.XiFragmentPresenter;
 import com.example.administrator.pointinfos.ui.activity.YiXiDetailActivity;
@@ -42,7 +44,7 @@ public class XiFragment extends BaseFragment {
     @InjectView(R.id.tkr)
     TwinklingRefreshLayout tkr;
     @Inject
-    XiFragmentPresenter xiFragmentPresenter=new XiFragmentPresenter(this);
+    XiFragmentPresenter xiFragmentPresenter;
     @Override
     protected int setLayoutResouceId() {
         return R.layout.fragment_news;
@@ -53,6 +55,7 @@ public class XiFragment extends BaseFragment {
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.inject(this, rootView);
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);//设置一行两列
+        DaggerYiXiFragmentComponet.builder().yiXiFragmentModule(new YiXiFragmentModule(this)).build().in(this);
         rcl.setLayoutManager(layoutManager);
         return rootView;
     }
