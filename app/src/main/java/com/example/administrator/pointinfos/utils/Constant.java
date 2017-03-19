@@ -15,4 +15,6 @@ public interface Constant {
     String WECHARTAPI="http://v.juhe.cn/weixin/query";
     //一席API
     String XIAPI="http://api.yixi.tv/api/v1/album";
+    //一席 具体内容
+    String YIXIDETAIL="http://api.yixi.tv/api/v1/lecture/detail/";
 }

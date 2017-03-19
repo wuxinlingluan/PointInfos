@@ -20,6 +20,7 @@ import com.example.administrator.pointinfos.presenter.fragment.XiFragmentPresent
 import com.example.administrator.pointinfos.ui.activity.YiXiDetailActivity;
 import com.example.administrator.pointinfos.ui.base.BaseFragment;
 import com.example.administrator.pointinfos.utils.IntentUtils;
+import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
@@ -105,6 +106,18 @@ public class XiFragment extends BaseFragment {
                     @Override
                     public boolean onItemLongClick(View view, RecyclerView.ViewHolder holder, int position) {
                         return false;
+                    }
+                });
+                tkr.setOnRefreshListener(new RefreshListenerAdapter() {
+                    @Override
+                    public void onRefresh(TwinklingRefreshLayout refreshLayout) {
+                        super.onRefresh(refreshLayout);
+                        xiFragmentPresenter.getDate();//获取数据
+                    }
+
+                    @Override
+                    public void onLoadMore(TwinklingRefreshLayout refreshLayout) {
+                        super.onLoadMore(refreshLayout);
                     }
                 });
             }

@@ -59,7 +59,7 @@ public class NewsFragment extends BaseFragment {
         ButterKnife.inject(this, rootView);
         rcl.setLayoutManager(new LinearLayoutManager(getActivity()));
         rcl.setHasFixedSize(true);
-        DaggerNewsFragmentComponet.builder().newsFragmentModule(new NewsFragmentModule(this)).build().in(this);
+        DaggerNewsFragmentComponet.builder().newsFragmentModule(new NewsFragmentModule(this)).build().in(this);//注入获取对象
         return rootView;
     }
 
@@ -117,11 +117,5 @@ public class NewsFragment extends BaseFragment {
                 }
             });
         }
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.reset(this);
     }
 }
