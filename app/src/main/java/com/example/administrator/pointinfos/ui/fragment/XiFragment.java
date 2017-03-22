@@ -62,10 +62,12 @@ public class XiFragment extends BaseFragment {
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    protected void onVisibleToUser() {
+        super.onVisibleToUser();
         xiFragmentPresenter.getDate();//获取数据
     }
+
+
     //数据成功后的处理
     public void success(List<YiXiBean.DataBean> data) {
             if (data!=null){
