@@ -13,6 +13,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.example.administrator.pointinfos.R;
+import com.example.administrator.pointinfos.dagger.componet.fragment.DaggerFilmFragmentComponet;
+import com.example.administrator.pointinfos.dagger.module.fragment.FilmFragmentModule;
 import com.example.administrator.pointinfos.model.net.bean.FilmBean;
 import com.example.administrator.pointinfos.presenter.fragment.FilmFragmentPresenter;
 import com.example.administrator.pointinfos.ui.base.BaseFragment;
@@ -38,21 +40,20 @@ public class FilmFragment extends BaseFragment {
     @InjectView(R.id.tkr)
     TwinklingRefreshLayout tkr;
     @Inject
-    FilmFragmentPresenter filmFragmentPresenter=new FilmFragmentPresenter(this);
+    FilmFragmentPresenter filmFragmentPresenter;
     @Override
     protected int setLayoutResouceId() {
         return R.layout.fragment_news;
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.inject(this, rootView);
         rcl.setLayoutManager(new LinearLayoutManager(getActivity()));
         rcl.setHasFixedSize(true);
+        DaggerFilmFragmentComponet.builder().filmFragmentModule(new FilmFragmentModule(this)).build().in(this);
         return rootView;
     }
-
     @Override
     public void onResume() {
         super.onResume();
