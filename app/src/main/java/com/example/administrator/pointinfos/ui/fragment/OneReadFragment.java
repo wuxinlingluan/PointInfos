@@ -75,7 +75,7 @@ public class OneReadFragment extends BaseFragment {
                         holder.setText(R.id.tv_title,mDatas.get(position).getTitle());//设置标题
                         holder.setText(R.id.tv_writer,"文/"+mDatas.get(position).getAuthor().getUser_name());//设置写手
                         holder.setText(R.id.tv_info,mDatas.get(position).getForward());//设置简介
-                        holder.setText(R.id.tv_time,mDatas.get(position).getLast_update_date());//设置时间
+                    //    holder.setText(R.id.tv_time,mDatas.get(position).getLast_update_date());//设置时间
                         String img_url_big = mDatas.get(position).getImg_url();//大图
                         String img_url_small = mDatas.get(position).getAuthor().getWeb_url();//小图
                         Glide.with(getActivity()).load(img_url_big).asBitmap().into(new SimpleTarget<Bitmap>() {
