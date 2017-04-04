@@ -13,6 +13,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.example.administrator.pointinfos.R;
+import com.example.administrator.pointinfos.dagger.componet.fragment.DaggerOneReadFragmentComponet;
+import com.example.administrator.pointinfos.dagger.module.fragment.OneReadFragmentModule;
 import com.example.administrator.pointinfos.model.net.bean.OneReadBean;
 import com.example.administrator.pointinfos.presenter.fragment.OneReadFragmentPresenter;
 import com.example.administrator.pointinfos.ui.activity.NewsWebActivity;
@@ -41,7 +43,7 @@ public class OneReadFragment extends BaseFragment {
     @InjectView(R.id.tkr)
     TwinklingRefreshLayout tkr;
     @Inject
-    OneReadFragmentPresenter oneReadFragmentPresenter=new OneReadFragmentPresenter(this);
+    OneReadFragmentPresenter oneReadFragmentPresenter;
     @Override
     protected int setLayoutResouceId() {
         return R.layout.fragment_news;
@@ -53,6 +55,7 @@ public class OneReadFragment extends BaseFragment {
         ButterKnife.inject(this, rootView);
         rcl.setLayoutManager(new LinearLayoutManager(getActivity()));
         rcl.setHasFixedSize(true);
+        DaggerOneReadFragmentComponet.builder().oneReadFragmentModule(new OneReadFragmentModule(this)).build().in(this);//注入获取对象
         return rootView;
     }
     //获取数据
