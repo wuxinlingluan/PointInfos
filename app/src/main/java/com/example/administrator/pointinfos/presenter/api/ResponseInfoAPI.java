@@ -1,6 +1,7 @@
 package com.example.administrator.pointinfos.presenter.api;
 
 import com.example.administrator.pointinfos.model.net.bean.EverydayReadBean;
+import com.example.administrator.pointinfos.model.net.bean.FilmBean;
 import com.example.administrator.pointinfos.model.net.bean.NewsBean;
 import com.example.administrator.pointinfos.model.net.bean.OneReadBean;
 import com.example.administrator.pointinfos.model.net.bean.WeChartBean;
@@ -30,5 +31,7 @@ public interface ResponseInfoAPI {
     Call<YiXiDetailBean> getyixidetail(@Path("detail") String detail);
     @GET(Constant.ONEREAD)
     Call<OneReadBean> getoneinfo();
+    @GET(Constant.FILM)
+    Call<FilmBean> getfilminfo();
 
 }

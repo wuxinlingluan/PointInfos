@@ -19,4 +19,6 @@ public interface Constant {
     String YIXIDETAIL="http://api.yixi.tv/api/v1/lecture/detail/";
     //一个具体内容
     String ONEREAD="http://v3.wufazhuce.com:8000/api/channel/reading/more/0";
+    //电影数据
+    String FILM="http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=1000";
 }

@@ -8,14 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.example.administrator.pointinfos.R;
+import com.example.administrator.pointinfos.ui.fragment.FilmFragment;
 import com.example.administrator.pointinfos.ui.fragment.HomeFragment;
 import com.example.administrator.pointinfos.ui.fragment.MeFragment;
-import com.example.administrator.pointinfos.ui.fragment.WechartFragment;
 import com.example.administrator.pointinfos.ui.fragment.XiFragment;
 
 public class MainActivity extends AppCompatActivity {
     private HomeFragment homeFragment;
-    private WechartFragment filmFragment;
+    private FilmFragment filmFragment;
     private XiFragment xiFragment;
     private MeFragment    meFragment;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     private void initFragmentFilm(){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         if(filmFragment == null){
-            filmFragment = new WechartFragment();
+            filmFragment = new FilmFragment();
             transaction.add(R.id.content, filmFragment);
         }
         //隐藏所有fragment
