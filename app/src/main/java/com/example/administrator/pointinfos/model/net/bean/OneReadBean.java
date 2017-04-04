@@ -6,7 +6,7 @@ import java.util.List;
  * Created by ${sheldon} on 2017/4/4.
  */
 
-public class OneRReadBean {
+public class OneReadBean {
 
     /**
      * res : 0

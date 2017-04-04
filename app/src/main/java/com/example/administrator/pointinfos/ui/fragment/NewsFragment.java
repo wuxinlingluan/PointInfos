@@ -36,8 +36,6 @@ import butterknife.InjectView;
 
 //新闻界面
 public class NewsFragment extends BaseFragment {
-//    @InjectView(R.id.progressbar)
-//    ProgressBar progressbar;
     private List<NewsBean.ResultBean.DataBean> mDatas = new ArrayList<>();
     private CommonAdapter<NewsBean.ResultBean.DataBean> commonAdapter;
     @InjectView(R.id.rcl)

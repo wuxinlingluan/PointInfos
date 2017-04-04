@@ -25,7 +25,7 @@ public class HomeFragment extends Fragment{
     TabLayout tabs;
     @InjectView(R.id.vp)
     ViewPager vp;
-    private String[] titles = new String[]{"每日新闻", "微信精选", "每日笑话", "每日一文"};//首页 viewpager名称
+    private String[] titles = new String[]{"每日新闻", "每日一文", "每日一个", "微信精选"};//首页 viewpager名称
     private MyAdaper adapter;
 
     @Nullable
@@ -65,13 +65,14 @@ public class HomeFragment extends Fragment{
                     fragment=new NewsFragment();//新闻界面
                     break;
                 case 1:
-                    fragment=new WechartFragment();//微信
+                    fragment=new BookFragment();//每日一文
+
                     break;
                 case 2:
                     fragment=new OneReadFragment();//笑话
                     break;
                 case 3:
-                    fragment=new BookFragment();//每日一文
+                    fragment=new WechartFragment();//微信
                     break;
             }
             return fragment;

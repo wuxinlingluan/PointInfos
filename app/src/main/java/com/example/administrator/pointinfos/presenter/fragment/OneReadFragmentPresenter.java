@@ -1,6 +1,6 @@
 package com.example.administrator.pointinfos.presenter.fragment;
 
-import com.example.administrator.pointinfos.model.net.bean.OneRReadBean;
+import com.example.administrator.pointinfos.model.net.bean.OneReadBean;
 import com.example.administrator.pointinfos.presenter.base.BasePresenter;
 import com.example.administrator.pointinfos.ui.fragment.OneReadFragment;
 
@@ -21,17 +21,17 @@ public class OneReadFragmentPresenter extends BasePresenter {
 
     //获取一个阅读数据
     public void getData() {
-        Call<OneRReadBean> getoneinfo = responseInfoAPI.getoneinfo();
-        getoneinfo.enqueue(new Callback<OneRReadBean>() {
+        Call<OneReadBean> getoneinfo = responseInfoAPI.getoneinfo();
+        getoneinfo.enqueue(new Callback<OneReadBean>() {
             @Override
-            public void onResponse(Call<OneRReadBean> call, Response<OneRReadBean> response) {
+            public void onResponse(Call<OneReadBean> call, Response<OneReadBean> response) {
                 if (response!=null&&response.isSuccessful()){
                     oneReadFragment.success(response.body().getData());
                 }
             }
 
             @Override
-            public void onFailure(Call<OneRReadBean> call, Throwable t) {
+            public void onFailure(Call<OneReadBean> call, Throwable t) {
                 oneReadFragment.fail();
             }
         });
