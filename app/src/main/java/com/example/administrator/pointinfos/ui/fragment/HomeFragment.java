@@ -68,7 +68,7 @@ public class HomeFragment extends Fragment{
                     fragment=new WechartFragment();//微信
                     break;
                 case 2:
-                    fragment=new JokeFragment();//笑话
+                    fragment=new OneReadFragment();//笑话
                     break;
                 case 3:
                     fragment=new BookFragment();//每日一文

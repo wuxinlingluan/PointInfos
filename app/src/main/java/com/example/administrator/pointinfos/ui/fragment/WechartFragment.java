@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -37,8 +36,8 @@ import butterknife.InjectView;
 
 //微信界面
 public class WechartFragment extends BaseFragment {
-    @InjectView(R.id.progressbar)
-    ProgressBar progressbar;
+//    @InjectView(R.id.progressbar)
+//    ProgressBar progressbar;
     private int pageNum; //页码
     private CommonAdapter<WeChartBean.ResultBean.ListBean> commonAdapter;
     private List<WeChartBean.ResultBean.ListBean> mDatas = new ArrayList<>();
@@ -75,9 +74,9 @@ public class WechartFragment extends BaseFragment {
     //数据返回
     public void success(WeChartBean.ResultBean result) {
         if (result != null) {
-            progressbar.setVisibility(View.GONE);
-            tkr.finishRefreshing();
-            tkr.finishLoadmore();
+           // progressbar.setVisibility(View.GONE);
+         //   tkr.finishRefreshing();
+        //    tkr.finishLoadmore();
             if (pageNum == 1) { //第一页数据
                 mDatas = result.getList();
                 commonAdapter = new CommonAdapter<WeChartBean.ResultBean.ListBean>(getActivity(), R.layout.item_newslist, mDatas) {

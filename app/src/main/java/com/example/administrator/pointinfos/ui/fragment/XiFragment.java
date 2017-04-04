@@ -7,7 +7,6 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
@@ -38,8 +37,8 @@ import butterknife.InjectView;
 public class XiFragment extends BaseFragment {
     private List<YiXiBean.DataBean> mDatas = new ArrayList<>();
     private CommonAdapter<YiXiBean.DataBean> commonAdapter;
-    @InjectView(R.id.progressbar)
-    ProgressBar progressbar;
+//    @InjectView(R.id.progressbar)
+//    ProgressBar progressbar;
     @InjectView(R.id.rcl)
     RecyclerView rcl;
     @InjectView(R.id.tkr)
@@ -71,7 +70,7 @@ public class XiFragment extends BaseFragment {
     //数据成功后的处理
     public void success(List<YiXiBean.DataBean> data) {
             if (data!=null){
-                progressbar.setVisibility(View.GONE);
+           //     progressbar.setVisibility(View.GONE);
                 tkr.finishRefreshing();//结束刷新
                 tkr.finishLoadmore();
                 mDatas=data;

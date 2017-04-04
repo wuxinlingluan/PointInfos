@@ -2,6 +2,7 @@ package com.example.administrator.pointinfos.presenter.api;
 
 import com.example.administrator.pointinfos.model.net.bean.EverydayReadBean;
 import com.example.administrator.pointinfos.model.net.bean.NewsBean;
+import com.example.administrator.pointinfos.model.net.bean.OneRReadBean;
 import com.example.administrator.pointinfos.model.net.bean.WeChartBean;
 import com.example.administrator.pointinfos.model.net.bean.YiXiBean;
 import com.example.administrator.pointinfos.model.net.bean.YiXiDetailBean;
@@ -27,4 +28,7 @@ public interface ResponseInfoAPI {
     Call<YiXiBean> getyixiInfo();
     @GET(Constant.YIXIDETAIL+"{detail}")
     Call<YiXiDetailBean> getyixidetail(@Path("detail") String detail);
+    @GET(Constant.ONEREAD)
+    Call<OneRReadBean> getoneinfo();
+
 }

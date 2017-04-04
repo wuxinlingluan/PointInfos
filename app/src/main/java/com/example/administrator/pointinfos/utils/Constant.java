@@ -17,4 +17,6 @@ public interface Constant {
     String XIAPI="http://api.yixi.tv/api/v1/album";
     //一席 具体内容
     String YIXIDETAIL="http://api.yixi.tv/api/v1/lecture/detail/";
+    //一个具体内容
+    String ONEREAD="http://v3.wufazhuce.com:8000/api/channel/reading/more/0";
 }
