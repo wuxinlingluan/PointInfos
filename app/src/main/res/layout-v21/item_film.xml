@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:padding="4dp"
-    android:elevation="3dp"
-    app:cardCornerRadius="2dp"
-    android:layout_height="wrap_content">
+    app:cardBackgroundColor="@color/Blue"
+    app:cardCornerRadius="10dp"
+    app:cardMaxElevation="10dp"
+    app:cardElevation="5dp"
+    app:layout_collapseParallaxMultiplier="0.5">
 
     <LinearLayout
         android:id="@+id/ll_one_photo"
@@ -13,23 +16,25 @@
         android:layout_height="160dp"
         android:background="#fff"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
+
             <ImageView
-                android:layout_width="95dp"
-                android:layout_margin="10dp"
-                android:layout_height="115dp"
-                android:scaleType="centerCrop"
                 android:id="@+id/iv_icon"
-                />
+                android:layout_width="95dp"
+                android:layout_height="115dp"
+                android:layout_margin="10dp"
+                android:scaleType="centerCrop" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="2dp"
                 android:gravity="bottom"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="2dp">
 
                 <TextView
                     android:id="@+id/tv_title"
@@ -43,50 +48,53 @@
                     android:textStyle="bold" />
 
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:textSize="10sp"
-                        android:id="@+id/tv_director"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginLeft="4dp"
-                        android:text="导演"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:textSize="10sp"
-                        android:id="@+id/tv_performer"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginTop="2dp"
-                        android:text="主演"
-                        android:paddingRight="10dp"/>
-                <TextView
+                    android:id="@+id/tv_director"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:textSize="10sp"
-                    android:layout_marginTop="2dp"
                     android:layout_marginLeft="4dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1"
+                    android:text="导演"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/tv_performer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1"
+                    android:paddingRight="10dp"
+                    android:text="主演"
+                    android:textSize="10sp" />
+
+                <TextView
                     android:id="@+id/tv_style"
-                    android:text="类型"
-                    android:paddingRight="10dp"/>
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:textSize="10sp"
                     android:layout_marginLeft="4dp"
                     android:layout_marginTop="2dp"
+                    android:layout_weight="1"
+                    android:paddingRight="10dp"
+                    android:text="类型"
+                    android:textSize="10sp" />
+
+                <TextView
                     android:id="@+id/tv_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1"
+                    android:paddingRight="10dp"
                     android:text="评分"
-                    android:paddingRight="10dp"/>
+                    android:textSize="10sp" />
                 <!--<View-->
-                    <!--android:layout_toRightOf="@id/iv_icon"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="1dp"-->
-                    <!--android:layout_marginTop="10dp"-->
-                    <!--android:background="@color/black_overlay"/>-->
+                <!--android:layout_toRightOf="@id/iv_icon"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:background="@color/black_overlay"/>-->
             </LinearLayout>
 
         </LinearLayout>
