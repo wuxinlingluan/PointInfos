@@ -2,11 +2,15 @@ package com.example.administrator.pointinfos.ui.fragment;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -33,54 +37,66 @@ import butterknife.InjectView;
 
 //电影界面
 public class FilmFragment extends BaseFragment {
-    private List<FilmBean.DataBean.MoviesBean> mDatas=new ArrayList<>();
-    private CommonAdapter<FilmBean.DataBean.MoviesBean> commonAdapter;
-    @InjectView(R.id.rcl)
-    RecyclerView rcl;
+
+    @InjectView(R.id.collapsing_toolbar)
+    CollapsingToolbarLayout collapsingToolbar;
+    @InjectView(R.id.appbar)
+    AppBarLayout appbar;
     @InjectView(R.id.tkr)
     TwinklingRefreshLayout tkr;
+    @InjectView(R.id.rcl)
+    RecyclerView rcl;
+    @InjectView(R.id.iv_head)
+    ImageView ivHead;
+    private List<FilmBean.DataBean.MoviesBean> mDatas = new ArrayList<>();
+    private CommonAdapter<FilmBean.DataBean.MoviesBean> commonAdapter;
     @Inject
     FilmFragmentPresenter filmFragmentPresenter;
+
     @Override
     protected int setLayoutResouceId() {
-        return R.layout.fragment_news;
+        return R.layout.fragment_film;
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.inject(this, rootView);
         rcl.setLayoutManager(new LinearLayoutManager(getActivity()));
-        rcl.setHasFixedSize(true);
+        rcl.setHasFixedSize(false);
+        rcl.setItemAnimator(new DefaultItemAnimator());
         DaggerFilmFragmentComponet.builder().filmFragmentModule(new FilmFragmentModule(this)).build().in(this);
         return rootView;
     }
+
     @Override
     public void onResume() {
         super.onResume();
         filmFragmentPresenter.getData();
     }
+
     //获取数据成功
     public void success(List<FilmBean.DataBean.MoviesBean> data) {
-        if (data!=null){
+        if (data != null) {
             tkr.finishRefreshing();//结束刷新
-            mDatas=data;
-            commonAdapter=new CommonAdapter<FilmBean.DataBean.MoviesBean>(getActivity(),R.layout.item_film,mDatas) {
+            mDatas = data;
+            commonAdapter = new CommonAdapter<FilmBean.DataBean.MoviesBean>(getActivity(), R.layout.item_film, mDatas) {
                 @Override
                 protected void convert(final ViewHolder holder, FilmBean.DataBean.MoviesBean moviesBean, int position) {
-                        holder.setText(R.id.tv_title,mDatas.get(position).getNm());//电影名
-                        holder.setText(R.id.tv_director,"导演: "+mDatas.get(position).getDir());//导演
-                        holder.setText(R.id.tv_performer,"主演: "+mDatas.get(position).getStar());//主演
-                        holder.setText(R.id.tv_style,"类型: "+mDatas.get(position).getCat());//类型
-                          if (mDatas.get(position).getSc()<1){
-                            holder.setText(R.id.tv_point,"评分: "+"暂无");//评分
-                          }else {
-                            holder.setText(R.id.tv_point,"评分: "+mDatas.get(position).getSc()+"");//评分
-                        }
-                        String img = mDatas.get(position).getImg();
-                        Glide.with(getActivity()).load(img).asBitmap().into(new SimpleTarget<Bitmap>() {
+                    holder.setText(R.id.tv_title, mDatas.get(position).getNm());//电影名
+                    holder.setText(R.id.tv_director, "导演: " + mDatas.get(position).getDir());//导演
+                    holder.setText(R.id.tv_performer, "主演: " + mDatas.get(position).getStar());//主演
+                    holder.setText(R.id.tv_style, "类型: " + mDatas.get(position).getCat());//类型
+                    if (mDatas.get(position).getSc() < 1) {
+                        holder.setText(R.id.tv_point, "评分: " + "暂无");//评分
+                    } else {
+                        holder.setText(R.id.tv_point, "评分: " + mDatas.get(position).getSc() + "");//评分
+                    }
+                    String img = mDatas.get(position).getImg();
+                    Glide.with(getActivity()).load(img).asBitmap().into(new SimpleTarget<Bitmap>() {
                         @Override
                         public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-                            holder.setImageBitmap(R.id.iv_icon,resource);//解析海报
+                            holder.setImageBitmap(R.id.iv_icon, resource);//解析海报
                         }
                     });
                 }
@@ -100,8 +116,8 @@ public class FilmFragment extends BaseFragment {
             });
         }
     }
-
     public void fail() {
         Toast.makeText(mActivity, "网络故障,请稍后重试", Toast.LENGTH_SHORT).show();
     }
+
 }

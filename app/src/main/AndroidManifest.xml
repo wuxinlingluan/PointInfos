@@ -3,7 +3,7 @@
     package="com.example.administrator.pointinfos">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/icon"
@@ -20,7 +20,7 @@
         </activity>
         <activity android:name=".ui.activity.MainActivity" />
         <activity android:name=".ui.activity.NewsWebActivity" />
-        <activity android:name=".ui.activity.YiXiDetailActivity"></activity>
+        <activity android:name=".ui.activity.YiXiDetailActivity" />
     </application>
 
 </manifest>
