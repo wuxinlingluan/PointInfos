@@ -10,4 +10,9 @@
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="Username">用户名</string>
+    <string name="Password">密码</string>
+    <string name="repeat_password">重复输入密码</string>
+    <string name="next">下一步</string>
+    <string name="register1">注册</string>
 </resources>
