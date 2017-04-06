@@ -5,13 +5,10 @@ import com.example.administrator.pointinfos.model.net.bean.FilmBean;
 import com.example.administrator.pointinfos.model.net.bean.NewsBean;
 import com.example.administrator.pointinfos.model.net.bean.OneReadBean;
 import com.example.administrator.pointinfos.model.net.bean.WeChartBean;
-import com.example.administrator.pointinfos.model.net.bean.YiXiBean;
-import com.example.administrator.pointinfos.model.net.bean.YiXiDetailBean;
 import com.example.administrator.pointinfos.utils.Constant;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -25,10 +22,6 @@ public interface ResponseInfoAPI {
     Call<NewsBean> getnewsinfo(@Query("key") String key);
     @GET(Constant.WECHARTAPI)
     Call<WeChartBean> getwechartinfo(@Query("key") String key,@Query("pno") String pageNum);
-    @GET(Constant.XIAPI)
-    Call<YiXiBean> getyixiInfo();
-    @GET(Constant.YIXIDETAIL+"{detail}")
-    Call<YiXiDetailBean> getyixidetail(@Path("detail") String detail);
     @GET(Constant.ONEREAD)
     Call<OneReadBean> getoneinfo();
     @GET(Constant.FILM)

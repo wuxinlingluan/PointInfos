@@ -81,12 +81,7 @@
                     android:id="@+id/tv_point"
                     android:text="评分"
                     android:paddingRight="10dp"/>
-                <!--<View-->
-                    <!--android:layout_toRightOf="@id/iv_icon"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="1dp"-->
-                    <!--android:layout_marginTop="10dp"-->
-                    <!--android:background="@color/black_overlay"/>-->
+
             </LinearLayout>
 
         </LinearLayout>
