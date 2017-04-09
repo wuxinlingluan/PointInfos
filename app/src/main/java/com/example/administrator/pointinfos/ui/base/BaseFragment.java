@@ -1,6 +1,7 @@
 package com.example.administrator.pointinfos.ui.base;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -51,17 +52,12 @@ public abstract class BaseFragment extends Fragment
                              @Nullable Bundle savedInstanceState)
     {
         mRootView = inflater.inflate(setLayoutResouceId(), container, false);
-
+        ButterKnife.inject(this, mRootView);
         initData(getArguments());
-
         initView();
-
         mIsPrepare = true;
-
         onLazyLoad();
-
         setListener();
-
         return mRootView;
     }
 
@@ -117,7 +113,23 @@ public abstract class BaseFragment extends Fragment
             onLazyLoad();
         }
     }
+    protected void startActivity(Class activity) {
+        startActivity(activity, false);
+    }
 
+    protected void startActivity(Class activity, String key, String extra) {
+        Intent intent = new Intent(getContext(), activity);
+        intent.putExtra(key, extra);
+        startActivity(intent);
+    }
+
+    protected void startActivity(Class activity, boolean finish) {
+        Intent intent = new Intent(getContext(), activity);
+        startActivity(intent);
+        if (finish) {
+            getActivity().finish();
+        }
+    }
     /**
      * 懒加载，仅当用户可见切view初始化结束后才会执行
      */

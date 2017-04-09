@@ -32,11 +32,11 @@ dependencies {
     //添加Retrofit依赖:
     //使用Gson进行数据解析
     //将Retorfit与Gson关联
+    // compile 'jp.wasabeef:glide-transformations:2.0.1'
+    compile project(':easeui')
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
-    // compile 'jp.wasabeef:glide-transformations:2.0.1'
     compile 'de.hdodenhof:circleimageview:2.1.0'
-    compile project(':easeui')
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
     compile 'de.hdodenhof:circleimageview:2.1.0'

@@ -15,4 +15,5 @@
     <string name="repeat_password">重复输入密码</string>
     <string name="next">下一步</string>
     <string name="register1">注册</string>
+    <string name="go">登陆</string>
 </resources>
