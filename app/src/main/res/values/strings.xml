@@ -16,4 +16,11 @@
     <string name="next">下一步</string>
     <string name="register1">注册</string>
     <string name="go">登陆</string>
+    <string name="delete_friend_message">确定删除好友?</string>
+    <string name="delete_friend">删除好友</string>
+    <string name="confirm">确定</string>
+    <string name="deleting_friend">正在删除好友</string>
+    <string name="get_contacts_error">获取最新联系人失败</string>
+    <string name="delete_friend_success">删除好友成功</string>
+    <string name="delete_friend_failed">删除好友失败,请重试</string>
 </resources>

@@ -22,6 +22,8 @@ import com.example.administrator.pointinfos.ui.base.BaseFragment;
 import com.example.administrator.pointinfos.utils.IntentUtils;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
+import com.lcodecore.tkrefreshlayout.footer.BallPulseView;
+import com.lcodecore.tkrefreshlayout.header.bezierlayout.BezierLayout;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
@@ -55,6 +57,10 @@ public class OneReadFragment extends BaseFragment {
         ButterKnife.inject(this, rootView);
         rcl.setLayoutManager(new LinearLayoutManager(getActivity()));
         rcl.setHasFixedSize(true);
+        BezierLayout bezierLayout=new BezierLayout(getActivity());
+        BallPulseView ballPulseView=new BallPulseView(getActivity());
+        tkr.setBottomView(ballPulseView);
+        tkr.setHeaderView(bezierLayout);
         DaggerOneReadFragmentComponet.builder().oneReadFragmentModule(new OneReadFragmentModule(this)).build().in(this);//注入获取对象
         return rootView;
     }

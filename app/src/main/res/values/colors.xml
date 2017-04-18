@@ -8,4 +8,8 @@
     <color name="colorPageBg">#f2f4f5</color>
     <color name="colorTabText">#585858</color>
     <color name="qq_blue">#457DD7</color>
+    <color name="qq_section_text_color">#8c8c8c</color>
+    <color name="half_transparent">#50000000</color>
+    <color name="qq_gray">#919191</color>
+    <color name="qq_red">#ff0000</color>
 </resources>

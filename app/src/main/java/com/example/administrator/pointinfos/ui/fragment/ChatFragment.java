@@ -37,7 +37,7 @@ public class ChatFragment extends BaseFragment {
         super.initView();
         ivBack.setVisibility(View.GONE);
         title.setText("消息");
-        tvRight.setText("添加");
+        tvRight.setText("联系人");
 
     }
     @OnClick(R.id.tv_right)

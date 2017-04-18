@@ -22,6 +22,8 @@ import com.example.administrator.pointinfos.ui.base.BaseFragment;
 import com.example.administrator.pointinfos.utils.IntentUtils;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
+import com.lcodecore.tkrefreshlayout.footer.LoadingView;
+import com.lcodecore.tkrefreshlayout.header.SinaRefreshView;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
@@ -56,6 +58,10 @@ public class NewsFragment extends BaseFragment {
         ButterKnife.inject(this, rootView);
         rcl.setLayoutManager(new LinearLayoutManager(getActivity()));
         rcl.setHasFixedSize(true);
+      SinaRefreshView sinaRefreshView=new SinaRefreshView(getActivity());
+        LoadingView loadingView=new LoadingView(getActivity());
+        tkr.setBottomView(loadingView);
+        tkr.setHeaderView(sinaRefreshView);
         DaggerNewsFragmentComponet.builder().newsFragmentModule(new NewsFragmentModule(this)).build().in(this);//注入获取对象
         return rootView;
     }
