@@ -5,6 +5,9 @@ apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+    sourceSets {
+        main.jniLibs.srcDirs = ['libs']
+    }
     defaultConfig {
         applicationId "com.example.administrator.pointinfos"
         minSdkVersion 15

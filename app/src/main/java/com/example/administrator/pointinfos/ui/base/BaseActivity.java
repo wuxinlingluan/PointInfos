@@ -3,12 +3,15 @@ package com.example.administrator.pointinfos.ui.base;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
+
+import com.example.administrator.pointinfos.utils.Constant;
 
 import butterknife.ButterKnife;
 
@@ -25,11 +28,13 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private InputMethodManager mInputMethodManager;
 
+    private SharedPreferences mSharedPreferences;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutRes());
         ButterKnife.inject(this);
+        mSharedPreferences = getSharedPreferences("config",MODE_PRIVATE);
         init();
     }
 
@@ -48,6 +53,21 @@ public abstract class BaseActivity extends AppCompatActivity {
             finish();
         }
     }
+    public void saveUser(String username,String pwd){
+        mSharedPreferences.edit()
+                .putString(Constant.SP_KEY_USERNAME,username)
+                .putString(Constant.SP_KEY_PWD,pwd)
+                .commit();
+    }
+
+    public String getUserName(){
+        return mSharedPreferences.getString(Constant.SP_KEY_USERNAME,"");
+    }
+    public String getPwd(){
+        return mSharedPreferences.getString(Constant.SP_KEY_PWD,"");
+    }
+
+
 
     protected void post(Runnable runnable) {
         postDelay(runnable, 0);

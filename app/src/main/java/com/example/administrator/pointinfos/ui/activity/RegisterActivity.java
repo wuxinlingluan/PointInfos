@@ -4,50 +4,55 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.text.TextUtils;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.animation.AccelerateInterpolator;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.administrator.pointinfos.R;
+import com.example.administrator.pointinfos.presenter.RegistPresenterImpl;
+import com.example.administrator.pointinfos.presenter.activity.RegistPresenter;
+import com.example.administrator.pointinfos.presenter.view.RegistView;
+import com.example.administrator.pointinfos.ui.base.BaseActivity;
 
-import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
 //注册界面
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends BaseActivity implements TextView.OnEditorActionListener,RegistView {
 
     @InjectView(R.id.et_username)
     EditText etUsername;
     @InjectView(R.id.et_password)
     EditText etPassword;
-    @InjectView(R.id.et_repeatpassword)
-    EditText etRepeatpassword;
     @InjectView(R.id.bt_go)
     Button btGo;
     @InjectView(R.id.cv_add)
     CardView cvAdd;
     @InjectView(R.id.fab)
     FloatingActionButton fab;
-
+    private RegistPresenter registPresenter;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-        ButterKnife.inject(this);
+    public int getLayoutRes() {
+        return R.layout.activity_register;
+    }
+    @Override
+    protected void init() {
+        registPresenter=new RegistPresenterImpl(this);
+        etPassword.setOnEditorActionListener(this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             ShowEnterAnimation();
         }
     }
-
     private void ShowEnterAnimation() {
         Transition transition = TransitionInflater.from(this).inflateTransition(R.transition.fabtransition);
         getWindow().setSharedElementEnterTransition(transition);
@@ -106,12 +111,22 @@ public class RegisterActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_go://下一步
-                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
-                finish();
+                register();
                 break;
             case R.id.fab://浮动按钮
                 animateRevealClose();
                 break;
+        }
+    }
+
+    private void register() {
+        String userName = etUsername.getText().toString().trim();
+        String pwd = etPassword.getText().toString().trim();
+        if (TextUtils.isEmpty(userName)||TextUtils.isEmpty(pwd)){
+            toast("账号或密码不能为空");
+        }else {
+            showProgress("正在注册");
+            registPresenter.regist(userName,pwd);
         }
     }
 
@@ -137,5 +152,28 @@ public class RegisterActivity extends AppCompatActivity {
     }
     public void onBackPressed() {
         animateRevealClose();
+    }
+
+    @Override
+    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+        if (v.getId()==R.id.et_password){
+            if (actionId== EditorInfo.IME_ACTION_DONE){
+                register();
+                return true;
+            }
+        }
+            return false;
+    }
+
+    @Override
+    public void onRegist(String username, String pwd, boolean isSuccess, String msg) {
+            hideProgress();
+            if (isSuccess){//注册成功
+              saveUser(username,pwd);
+                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+                finish();
+            } else { //注册失败
+             showProgress("注册失败");
+            }
     }
 }

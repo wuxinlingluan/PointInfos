@@ -52,6 +52,7 @@
                 android:paddingRight="30dp">
                 <android.support.design.widget.TextInputLayout
                     android:textColorHint="#c5c5c5"
+                    android:id="@+id/ti_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <EditText
@@ -78,6 +79,7 @@
                 android:paddingRight="30dp">
                 <android.support.design.widget.TextInputLayout
                     android:textColorHint="#c5c5c5"
+                    android:id="@+id/ti_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <EditText
