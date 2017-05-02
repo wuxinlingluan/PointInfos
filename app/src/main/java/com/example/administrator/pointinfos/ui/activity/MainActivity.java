@@ -1,19 +1,18 @@
 package com.example.administrator.pointinfos.ui.activity;
 
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.example.administrator.pointinfos.R;
+import com.example.administrator.pointinfos.ui.base.BaseActivity;
 import com.example.administrator.pointinfos.ui.fragment.ChatFragment;
 import com.example.administrator.pointinfos.ui.fragment.FilmFragment;
 import com.example.administrator.pointinfos.ui.fragment.HomeFragment;
 import com.example.administrator.pointinfos.ui.fragment.MeFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     private HomeFragment homeFragment;
     private FilmFragment filmFragment;
     private ChatFragment chatFragment;
@@ -43,20 +42,20 @@ public class MainActivity extends AppCompatActivity {
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        init();
+    public int getLayoutRes() {
+        return R.layout.activity_main;
     }
     /**
      * 初始化
      * */
-    private void init() {
+    protected void init() {
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         initFragmentHome();
     }
-       /**
+
+
+    /**
         * 初始化首页
         * */
         private void initFragmentHome(){
@@ -131,4 +130,6 @@ public class MainActivity extends AppCompatActivity {
             transaction.hide(meFragment);
         }
     }
+
+
 }

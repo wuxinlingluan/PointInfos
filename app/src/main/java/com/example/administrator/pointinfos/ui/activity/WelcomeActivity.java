@@ -9,8 +9,12 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.administrator.pointinfos.R;
+import com.example.administrator.pointinfos.utils.Constant;
+import com.example.administrator.pointinfos.utils.SPUtils;
 
 public class WelcomeActivity extends AppCompatActivity {
+
+    private boolean aBoolean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +36,17 @@ public class WelcomeActivity extends AppCompatActivity {
     };
 
     public void getHome(){
-        Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
-        startActivity(intent);
-        finish();
+        //是否登陆
+        aBoolean = SPUtils.getBoolean(this, Constant.AL_LOGIN);
+        if (aBoolean){
+            Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
     }
 }

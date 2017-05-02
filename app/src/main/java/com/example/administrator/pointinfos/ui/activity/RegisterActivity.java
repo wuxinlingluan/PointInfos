@@ -19,7 +19,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.administrator.pointinfos.R;
-import com.example.administrator.pointinfos.presenter.RegistPresenterImpl;
+import com.example.administrator.pointinfos.presenter.activity.impl.RegistPresenterImpl;
 import com.example.administrator.pointinfos.presenter.activity.RegistPresenter;
 import com.example.administrator.pointinfos.presenter.view.RegistView;
 import com.example.administrator.pointinfos.ui.base.BaseActivity;

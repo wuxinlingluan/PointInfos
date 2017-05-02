@@ -1,4 +1,4 @@
-package com.example.administrator.pointinfos.presenter;
+package com.example.administrator.pointinfos.presenter.activity.impl;
 
 import com.example.administrator.pointinfos.model.User;
 import com.example.administrator.pointinfos.presenter.activity.RegistPresenter;

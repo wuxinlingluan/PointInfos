@@ -23,6 +23,8 @@ public interface Constant {
     String FILM="http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=1000";
     String SP_KEY_USERNAME="username";
     String SP_KEY_PWD="pwd";
+    String APK_CONFIG="config.xml";
+    String AL_LOGIN="alreadylogin";
 
     public static class Database {
         public static final String DATABASE_NAME = "qq-db";
