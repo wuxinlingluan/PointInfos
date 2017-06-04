@@ -33,7 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.MainActivity" />
+        <activity android:name=".ui.activity.MainActivity"  android:theme="@style/AppTheme"/>
         <activity android:name=".ui.activity.NewsWebActivity" />
         <!-- 设置环信应用的AppKey -->
         <meta-data

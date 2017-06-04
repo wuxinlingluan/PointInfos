@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.administrator.pointinfos.ui.activity.MainActivity;
 import com.example.administrator.pointinfos.utils.Constant;
+import com.gyf.barlibrary.ImmersionBar;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -46,6 +47,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         ButterKnife.inject(this);
         mSharedPreferences = getSharedPreferences("config",MODE_PRIVATE);
+        ImmersionBar.with(this).init();
         init();
     }
 
@@ -84,7 +86,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         synchronized (mActivities) {
             mActivities.remove(this);
         }
-
+        ImmersionBar.with(this).destroy();  //不调用该方法，如果界面bar发生改变，在不关闭app的情况下，退出此界面再进入将记忆最后一次bar改变的状态
     }
 
     /**

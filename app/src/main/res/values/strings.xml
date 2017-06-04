@@ -23,4 +23,5 @@
     <string name="get_contacts_error">获取最新联系人失败</string>
     <string name="delete_friend_success">删除好友成功</string>
     <string name="delete_friend_failed">删除好友失败,请重试</string>
+    <string name="title_hot_film">最热电影</string>
 </resources>

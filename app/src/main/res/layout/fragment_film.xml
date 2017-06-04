@@ -4,23 +4,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:statusBarBackground="@null">
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
         android:layout_height="wrap_content"
-        app:elevation="0dp">
+      >
+
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:collapsedTitleGravity="center"
-            app:expandedTitleMarginBottom="60dp"
-            app:expandedTitleMarginStart="135dp"
-            app:expandedTitleMarginTop="0dp"
-            app:statusBarScrim="@null">
+            app:contentScrim="@color/colorPrimary"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+          >
 
             <ImageView
                 android:id="@+id/iv_head"
@@ -33,6 +34,13 @@
                 android:alpha="0.8"
                 app:layout_collapseParallaxMultiplier="0.7"
                 />
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                app:title="@string/title_hot_film"
+                app:titleMarginStart="5dp"
+                app:titleTextColor="@android:color/white"
+                android:layout_height="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
@@ -40,16 +48,18 @@
     <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
         android:id="@+id/tkr"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rcl"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="159dp"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true">
+            android:layout_alignParentEnd="true"
+            >
         </android.support.v7.widget.RecyclerView>
     </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
 

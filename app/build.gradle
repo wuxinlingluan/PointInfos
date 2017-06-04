@@ -60,4 +60,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     apt 'com.google.dagger:dagger-compiler:2.6'
     compile 'org.greenrobot:greendao:3.2.0'
+    compile 'com.gyf.barlibrary:barlibrary:2.2.1'
 }
