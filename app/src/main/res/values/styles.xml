@@ -11,7 +11,11 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:textColorPrimary">#fff</item>
     </style>
-
+    <!-- ToolBar菜单样式 -->
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">@color/white</item> <!--  敲定颜色-->
+        <item name="android:textSize">18sp</item> <!--  搞掂字体大小-->
+    </style>
     <style name="FullscreenTheme" parent="AppTheme">
         <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
         <item name="android:windowActionBarOverlay">true</item>
@@ -30,4 +34,6 @@
         <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
         <item name="colorControlActivated">#FFCC00</item>
     </style>
+
+    <color name="white">#fff</color>
 </resources>

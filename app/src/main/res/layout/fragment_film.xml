@@ -40,6 +40,7 @@
                 app:title="@string/title_hot_film"
                 app:titleMarginStart="5dp"
                 app:titleTextColor="@android:color/white"
+                app:theme="@style/ToolbarTheme"
                 android:layout_height="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
         </android.support.design.widget.CollapsingToolbarLayout>
 
