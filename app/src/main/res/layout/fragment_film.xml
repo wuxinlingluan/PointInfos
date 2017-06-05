@@ -34,7 +34,6 @@
                 android:alpha="0.8"
                 app:layout_collapseParallaxMultiplier="0.7"
                 />
-
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 app:title="@string/title_hot_film"
@@ -57,9 +56,9 @@
             android:id="@+id/rcl"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
+            android:scrollbars="vertical"
+            android:scrollbarFadeDuration="1"
+            android:fadeScrollbars="true"
             >
         </android.support.v7.widget.RecyclerView>
     </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>

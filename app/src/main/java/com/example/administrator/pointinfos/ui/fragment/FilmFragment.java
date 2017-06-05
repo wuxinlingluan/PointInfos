@@ -24,6 +24,8 @@ import com.example.administrator.pointinfos.presenter.fragment.FilmFragmentPrese
 import com.example.administrator.pointinfos.ui.base.BaseFragment;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
+import com.lcodecore.tkrefreshlayout.footer.LoadingView;
+import com.lcodecore.tkrefreshlayout.header.SinaRefreshView;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
@@ -65,6 +67,10 @@ public class FilmFragment extends BaseFragment {
         rcl.setLayoutManager(new LinearLayoutManager(getActivity()));
         rcl.setHasFixedSize(false);
         rcl.setItemAnimator(new DefaultItemAnimator());
+        SinaRefreshView sinaRefreshView=new SinaRefreshView(getActivity());
+        LoadingView loadingView=new LoadingView(getActivity());
+        tkr.setBottomView(loadingView);
+        tkr.setHeaderView(sinaRefreshView);
         DaggerFilmFragmentComponet.builder().filmFragmentModule(new FilmFragmentModule(this)).build().in(this);
         return rootView;
     }
