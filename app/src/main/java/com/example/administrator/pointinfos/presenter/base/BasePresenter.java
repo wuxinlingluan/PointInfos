@@ -4,6 +4,7 @@ import com.example.administrator.pointinfos.presenter.api.ResponseInfoAPI;
 import com.example.administrator.pointinfos.utils.Constant;
 
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -18,7 +19,7 @@ public class BasePresenter {
 
     public BasePresenter() {
         if (responseInfoAPI==null) {
-          Retrofit retrofit = new Retrofit.Builder().baseUrl(Constant.BASEURL).addConverterFactory(GsonConverterFactory.create()).build();
+          Retrofit retrofit = new Retrofit.Builder().baseUrl(Constant.BASEURL).addConverterFactory(GsonConverterFactory.create()).addCallAdapterFactory(RxJavaCallAdapterFactory.create()).build();
             responseInfoAPI = retrofit.create(ResponseInfoAPI.class);
         }
     }

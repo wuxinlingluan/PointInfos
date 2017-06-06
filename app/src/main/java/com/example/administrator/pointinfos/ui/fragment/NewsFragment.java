@@ -58,7 +58,7 @@ public class NewsFragment extends BaseFragment {
         ButterKnife.inject(this, rootView);
         rcl.setLayoutManager(new LinearLayoutManager(getActivity()));
         rcl.setHasFixedSize(true);
-      SinaRefreshView sinaRefreshView=new SinaRefreshView(getActivity());
+        SinaRefreshView sinaRefreshView=new SinaRefreshView(getActivity());
         LoadingView loadingView=new LoadingView(getActivity());
         tkr.setBottomView(loadingView);
         tkr.setHeaderView(sinaRefreshView);

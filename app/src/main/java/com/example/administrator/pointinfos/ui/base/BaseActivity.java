@@ -41,13 +41,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ImmersionBar.with(this).init();
         setContentView(getLayoutRes());
         synchronized (mActivities) {
             mActivities.add(this);
         }
         ButterKnife.inject(this);
         mSharedPreferences = getSharedPreferences("config",MODE_PRIVATE);
-        ImmersionBar.with(this).init();
         init();
     }
 

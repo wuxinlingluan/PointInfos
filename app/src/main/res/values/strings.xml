@@ -3,7 +3,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">主页</string>
     <string name="title_film">电影</string>
-    <string name="title_book">阅读</string>
+    <string name="title_book">豆瓣</string>
     <string name="title_me">我的</string>
     <string name="hello_blank_fragment">主页</string>
 
@@ -24,4 +24,5 @@
     <string name="delete_friend_success">删除好友成功</string>
     <string name="delete_friend_failed">删除好友失败,请重试</string>
     <string name="title_hot_film">最热电影</string>
+    <string name="title_douban">豆瓣一刻</string>
 </resources>

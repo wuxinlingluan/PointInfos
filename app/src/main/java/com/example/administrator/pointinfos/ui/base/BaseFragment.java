@@ -1,8 +1,10 @@
 package com.example.administrator.pointinfos.ui.base;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -10,14 +12,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.blankj.utilcode.util.ToastUtils;
+
 import butterknife.ButterKnife;
 
 
 /**
  * fragment 简单封装
  */
-public abstract class BaseFragment extends Fragment
-{
+public abstract class BaseFragment extends Fragment {
+    private ProgressDialog mProgressDialog;
+    private Handler handler = new Handler();
     /**
      * 贴附的activity
      */
@@ -55,6 +60,8 @@ public abstract class BaseFragment extends Fragment
         ButterKnife.inject(this, mRootView);
         initData(getArguments());
         initView();
+        mProgressDialog = new ProgressDialog(getActivity());
+        mProgressDialog.setCancelable(false);
         mIsPrepare = true;
         onLazyLoad();
         setListener();
@@ -77,7 +84,25 @@ public abstract class BaseFragment extends Fragment
     {
 
     }
-
+    /*
+       * 弹出加载对话框
+       * */
+    public void showDialog(String msg) {
+        mProgressDialog.setMessage(msg);
+        mProgressDialog.show();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (mProgressDialog != null && mProgressDialog.isShowing()) {
+                    ToastUtils.showShort("连接超时,请稍后重试");
+                    mProgressDialog.dismiss();
+                }
+            }
+        }, 10000);
+    }
+    public void hideDialog() {
+        mProgressDialog.dismiss();
+    }
     /**
      * 设置监听事件
      */
@@ -89,6 +114,7 @@ public abstract class BaseFragment extends Fragment
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.reset(this);
+        mProgressDialog.dismiss();
     }
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser)

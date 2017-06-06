@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.example.administrator.pointinfos.R;
+import com.gyf.barlibrary.ImmersionBar;
 
 public class NewsWebActivity extends AppCompatActivity {
 
@@ -22,6 +23,7 @@ public class NewsWebActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ImmersionBar.with(this).init();
         setContentView(R.layout.activity_news_web);
         webview = (WebView) findViewById(R.id.webview);
         iv_back = (ImageView)findViewById(R.id.iv_back);
@@ -65,5 +67,11 @@ public class NewsWebActivity extends AppCompatActivity {
             view.loadUrl(url);
             return true;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ImmersionBar.with(this).destroy();
     }
 }

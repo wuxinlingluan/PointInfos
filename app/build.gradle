@@ -4,7 +4,7 @@ apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '25.0.2'
     sourceSets {
         main.jniLibs.srcDirs = ['libs']
     }
@@ -16,6 +16,9 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+//        jackOptions {
+//            enabled true
+//        }
     }
     buildTypes {
         release {
@@ -23,6 +26,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
 }
 
 dependencies {
@@ -31,11 +38,17 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     //添加dagger2的依赖
+
     //关联Dagger2
+
     //依赖ButterKnife
+
     //添加Retrofit依赖:
+
     //使用Gson进行数据解析
+
     //将Retorfit与Gson关联
+
     // compile 'jp.wasabeef:glide-transformations:2.0.1'
     compile project(':easeui')
     compile 'com.android.support:appcompat-v7:25.3.1'
@@ -61,4 +74,10 @@ dependencies {
     apt 'com.google.dagger:dagger-compiler:2.6'
     compile 'org.greenrobot:greendao:3.2.0'
     compile 'com.gyf.barlibrary:barlibrary:2.2.1'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'com.blankj:utilcode:1.6.4'
+//    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+//    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+   // compile 'com.jnape.palatable:lambda:1.6.0'
 }

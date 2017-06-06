@@ -21,10 +21,13 @@ public interface Constant {
     String ONEREAD="http://v3.wufazhuce.com:8000/api/channel/reading/more/0";
     //电影数据
     String FILM="http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=1000";
+    //豆瓣一刻
+    String DOUBANAPI="https://moment.douban.com/api/stream/date/";
     String SP_KEY_USERNAME="username";
     String SP_KEY_PWD="pwd";
     String APK_CONFIG="config.xml";
     String AL_LOGIN="alreadylogin";
+
 
     public static class Database {
         public static final String DATABASE_NAME = "qq-db";

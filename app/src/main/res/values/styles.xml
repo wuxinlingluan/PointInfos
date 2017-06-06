@@ -13,7 +13,11 @@
     </style>
     <!-- ToolBar菜单样式 -->
     <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
-        <item name="actionMenuTextColor">@color/white</item> <!--  敲定颜色-->
+        <item name="actionMenuTextColor">@color/colorAccent</item> <!--  敲定颜色-->
+        <item name="android:textSize">18sp</item> <!--  搞掂字体大小-->
+    </style>
+    <style name="ToolbarThemeDouban" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">@color/colorDouban</item> <!--  敲定颜色-->
         <item name="android:textSize">18sp</item> <!--  搞掂字体大小-->
     </style>
     <style name="FullscreenTheme" parent="AppTheme">
@@ -36,4 +40,5 @@
     </style>
 
     <color name="white">#fff</color>
+    <color name="colorDouban">#19C1A8</color>
 </resources>

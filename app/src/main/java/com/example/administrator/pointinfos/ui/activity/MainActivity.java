@@ -7,7 +7,7 @@ import android.view.MenuItem;
 
 import com.example.administrator.pointinfos.R;
 import com.example.administrator.pointinfos.ui.base.BaseActivity;
-import com.example.administrator.pointinfos.ui.fragment.ChatFragment;
+import com.example.administrator.pointinfos.ui.fragment.DoubanFragment;
 import com.example.administrator.pointinfos.ui.fragment.FilmFragment;
 import com.example.administrator.pointinfos.ui.fragment.HomeFragment;
 import com.example.administrator.pointinfos.ui.fragment.MeFragment;
@@ -15,7 +15,7 @@ import com.example.administrator.pointinfos.ui.fragment.MeFragment;
 public class MainActivity extends BaseActivity {
     private HomeFragment homeFragment;
     private FilmFragment filmFragment;
-    private ChatFragment chatFragment;
+    private DoubanFragment doubanFragment;
     private MeFragment    meFragment;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -90,14 +90,14 @@ public class MainActivity extends BaseActivity {
      * */
     private void initFragmentBook(){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        if(chatFragment == null){
-            chatFragment = new ChatFragment();
-            transaction.add(R.id.content, chatFragment);
+        if(doubanFragment == null){
+            doubanFragment = new DoubanFragment();
+            transaction.add(R.id.content, doubanFragment);
         }
         //隐藏所有fragment
         hideFragment(transaction);
         //显示需要显示的fragment
-        transaction.show(chatFragment);
+        transaction.show(doubanFragment);
         transaction.commit();
     }
     /**
@@ -123,8 +123,8 @@ public class MainActivity extends BaseActivity {
         if(filmFragment != null){
             transaction.hide(filmFragment);
         }
-        if(chatFragment != null){
-            transaction.hide(chatFragment);
+        if(doubanFragment != null){
+            transaction.hide(doubanFragment);
         }
         if(meFragment != null){
             transaction.hide(meFragment);
