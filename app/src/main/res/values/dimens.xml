@@ -4,4 +4,5 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="image_final_width">15dp</dimen>
     <dimen name="image_width">15dp</dimen>
+    <dimen name="app_bar_height">240dp</dimen>
 </resources>

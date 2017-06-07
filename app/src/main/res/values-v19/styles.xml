@@ -9,4 +9,11 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:textColorPrimary">#fff</item>
     </style>
+    <style name="ToolbarThemeDouban" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="actionMenuTextColor">@color/colorAccent</item> <!--  敲定颜色-->
+        <item name="android:colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="android:textSize">18sp</item> <!--  搞掂字体大小-->
+    </style>
 </resources>

@@ -29,6 +29,7 @@ public class DouBanFragmentImpl extends BasePresenter implements DouBanFragmentP
 
     @Override
     public void getData() {
+        mDoubanView.showProgressBar();
         Date mDate = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String dateNowStr = sdf.format(mDate);
@@ -46,14 +47,17 @@ public class DouBanFragmentImpl extends BasePresenter implements DouBanFragmentP
     class MySubscriber extends Subscriber<DoubanBean> {
         @Override
         public void onCompleted() {
+            mDoubanView.hideProgressBar();
             mDoubanView.showData(list);
         }
         @Override
         public void onError(Throwable e) {
+            mDoubanView.hideProgressBar();
             mDoubanView.showeFailure();
         }
         @Override
         public void onNext(DoubanBean doubanBean) {
+            mDoubanView.hideProgressBar();
             list.add(doubanBean);
         }
     }

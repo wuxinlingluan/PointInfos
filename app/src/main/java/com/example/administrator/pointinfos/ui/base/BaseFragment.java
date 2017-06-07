@@ -11,8 +11,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.blankj.utilcode.util.ToastUtils;
+import android.widget.Toast;
 
 import butterknife.ButterKnife;
 
@@ -94,7 +93,7 @@ public abstract class BaseFragment extends Fragment {
             @Override
             public void run() {
                 if (mProgressDialog != null && mProgressDialog.isShowing()) {
-                    ToastUtils.showShort("连接超时,请稍后重试");
+                    Toast.makeText(mActivity, "连接超时,请稍后重试", Toast.LENGTH_SHORT).show();
                     mProgressDialog.dismiss();
                 }
             }

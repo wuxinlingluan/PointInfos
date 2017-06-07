@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.administrator.pointinfos">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -26,14 +27,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.WelcomeActivity" >
+        <activity android:name=".ui.activity.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.MainActivity"  android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:theme="@style/AppTheme" />
         <activity android:name=".ui.activity.NewsWebActivity" />
         <!-- 设置环信应用的AppKey -->
         <meta-data
@@ -61,9 +64,12 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".ui.activity.LoginActivity" android:launchMode="singleTop"/>
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:launchMode="singleTop" />
         <activity android:name=".ui.activity.RegisterActivity" />
-        <activity android:name=".ui.activity.ContactActivity"></activity>
+        <activity android:name=".ui.activity.ContactActivity" />
+        <activity android:name=".ui.activity.DoubanDetailActivity"></activity>
     </application>
 
 </manifest>
