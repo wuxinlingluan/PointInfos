@@ -1,32 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/colorAccent"
-    android:orientation="horizontal">
-<ImageView
-    android:layout_width="45dp"
-    android:layout_height="45dp"
-    android:clickable="true"
-    android:id="@+id/iv_back"
-    android:layout_margin="3dp"
-    android:src="@drawable/back1"/>
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:textSize="20sp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:textColor="#fff"
-        android:text="内容详情"/>
-</RelativeLayout>
+        app:theme="@style/ToolbarThemeDouban"
+
+        >
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:background="@color/colorAccent"
+            app:theme="@style/ToolbarThemeDouban"
+            />
+    </android.support.design.widget.AppBarLayout>
     <ProgressBar
         android:id="@+id/pb_agreement_detail_pager"
         style="?android:attr/progressBarStyleHorizontal"

@@ -11,9 +11,10 @@ import android.widget.ImageView;
 
 import com.blankj.utilcode.util.SnackbarUtils;
 import com.example.administrator.pointinfos.R;
+import com.example.administrator.pointinfos.dagger.componet.fragment.DaggerDoubanComponet;
+import com.example.administrator.pointinfos.dagger.module.fragment.DoubanFragmentModule;
 import com.example.administrator.pointinfos.model.net.bean.DoubanBean;
 import com.example.administrator.pointinfos.presenter.fragment.DouBanFragmentPresenter;
-import com.example.administrator.pointinfos.presenter.fragment.impl.DouBanFragmentImpl;
 import com.example.administrator.pointinfos.presenter.view.DoubanView;
 import com.example.administrator.pointinfos.ui.activity.DoubanDetailActivity;
 import com.example.administrator.pointinfos.ui.base.BaseFragment;
@@ -28,6 +29,8 @@ import com.zhy.adapter.recyclerview.base.ViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import butterknife.InjectView;
 
@@ -49,7 +52,8 @@ public class DoubanFragment extends BaseFragment implements DoubanView{
     TwinklingRefreshLayout tkr;
     private CommonAdapter<DoubanBean.PostsBean> commonAdapter;
     private List<DoubanBean.PostsBean> mData=new ArrayList<>();
-    private DouBanFragmentPresenter douBanFragmentPresenter; //初始化
+    @Inject
+     DouBanFragmentPresenter douBanFragmentPresenter; //初始化
     @Override
     protected int setLayoutResouceId() {
         return R.layout.fragment_douban;
@@ -61,7 +65,7 @@ public class DoubanFragment extends BaseFragment implements DoubanView{
         SinaRefreshView sinaRefreshView=new SinaRefreshView(getActivity());
         tkr.setHeaderView(sinaRefreshView);
         tkr.setEnableLoadmore(false);
-        douBanFragmentPresenter=new DouBanFragmentImpl(this);
+        DaggerDoubanComponet.builder().doubanFragmentModule(new DoubanFragmentModule(this)).build().in(this);
     }
     @Override
     public void onResume() {
