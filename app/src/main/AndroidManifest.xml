@@ -49,6 +49,8 @@
             android:launchMode="singleTop" />
         <activity android:name=".ui.activity.RegisterActivity" />
         <activity android:name=".ui.activity.DoubanDetailActivity" />
+        <activity android:name=".PersonaldetailsActivity" />
+        <activity android:name=".ui.activity.PersonaldetailActivity" />
         <activity android:name=".ui.activity.PersonaldetailsActivity"></activity>
     </application>
 

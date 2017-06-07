@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.administrator.pointinfos.R;
 import com.example.administrator.pointinfos.ui.activity.LoginActivity;
+import com.example.administrator.pointinfos.ui.activity.PersonaldetailsActivity;
 import com.example.administrator.pointinfos.ui.base.BaseFragment;
 import com.example.administrator.pointinfos.utils.CachesDataCleanUtils;
 import com.example.administrator.pointinfos.utils.CommonUtils;
@@ -58,13 +59,13 @@ public class MeFragment extends BaseFragment {
             e.printStackTrace();
         }
     }
-    
+
 
     @OnClick({R.id.rl_name, R.id.rl_modify_pwd, R.id.rl_clean_cache, R.id.btn_exit_login})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.rl_name://
-             //   Toast.makeText(mActivity, "个人条目", Toast.LENGTH_SHORT).show();
+       IntentUtils.changeActivity(getActivity(), PersonaldetailsActivity.class);
                 break;
             case R.id.rl_modify_pwd:
              //   Toast.makeText(mActivity, "修改密码", Toast.LENGTH_SHORT).show();

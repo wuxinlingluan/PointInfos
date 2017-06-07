@@ -27,4 +27,7 @@
     <string name="title_douban">豆瓣一刻</string>
     <string name="mine">我的</string>
     <string name="login">登陆</string>
+    <string name="about_me">这是我使用MVP+Dagger2+Rxjava+Retrofit的一个开源项目,项目用到的Api都是从网上找的一些免费的,也有一些非官方提供的,不做盈利目的,如有侵权请提示删除.</string>
+    <string name="project_addr">github.com/wuxinlingluan/PointInfos</string>
+    <string name="github_addr">github.com/wuxinlingluan</string>
 </resources>
