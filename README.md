@@ -7,5 +7,5 @@
 
 ![image](https://github.com/wuxinlingluan/PointInfos/blob/master/app/src/main/res/pic/3.png) ![image](https://github.com/wuxinlingluan/PointInfos/blob/master/app/src/main/res/pic/4.png) ![image](https://github.com/wuxinlingluan/PointInfos/blob/master/app/src/main/res/pic/5.png) ![image](https://github.com/wuxinlingluan/PointInfos/blob/master/app/src/main/res/pic/6.png)
 ### tpis
-本项目还在更新中,如有建议欢迎提交[Issues](https://github.com/wuxinlingluan/PointInfos/issues)  
-联系方式:QQ 452283765 
+本项目还在更新中,如有建议欢迎提交[Issues](https://github.com/wuxinlingluan/PointInfos/issues)  
+或者联系本人QQ 452283765 
