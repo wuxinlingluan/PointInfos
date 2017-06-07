@@ -47,7 +47,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             mActivities.add(this);
         }
         ButterKnife.inject(this);
-        mSharedPreferences = getSharedPreferences("config",MODE_PRIVATE);
+        mSharedPreferences = getSharedPreferences("config",BIND_AUTO_CREATE);
         init();
     }
 

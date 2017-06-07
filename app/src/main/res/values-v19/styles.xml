@@ -16,4 +16,22 @@
         <item name="colorPrimaryDark">@color/colorAccent</item>
         <item name="android:textSize">18sp</item> <!--  搞掂字体大小-->
     </style>
+
+    <!-- 水平分隔线的统一样式2 -->
+    <style name="horizontalDivideLineCommonStyle2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#bbb</item>
+    </style>
+    <!-- 水平长按钮的格式-->
+    <style name="horizontalButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/bt_selector</item>
+    </style>
 </resources>

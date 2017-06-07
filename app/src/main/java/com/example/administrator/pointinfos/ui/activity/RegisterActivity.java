@@ -169,7 +169,7 @@ public class RegisterActivity extends BaseActivity implements TextView.OnEditorA
     public void onRegist(String username, String pwd, boolean isSuccess, String msg) {
             hideProgress();
             if (isSuccess){//注册成功
-              saveUser(username,pwd);
+               saveUser(username,pwd);
                 startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
                 finish();
             } else { //注册失败

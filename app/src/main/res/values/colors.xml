@@ -12,4 +12,8 @@
     <color name="half_transparent">#50000000</color>
     <color name="qq_gray">#919191</color>
     <color name="qq_red">#ff0000</color>
+    <color name="type_color">#919191</color>
+    <color name="divider">#919191</color>
+    <color name="bt_bcak">#969696</color>
+    <color name="btn_gray_normal">#919191</color>
 </resources>

@@ -1,9 +1,9 @@
 package com.example.administrator.pointinfos.utils;
 
 import android.app.Application;
-
-import com.hyphenate.chat.EMClient;
-import com.hyphenate.easeui.controller.EaseUI;
+import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 
 import cn.bmob.v3.Bmob;
 
@@ -12,14 +12,37 @@ import cn.bmob.v3.Bmob;
  */
 
 public class MyApplication extends Application {
+    private static Handler mMainHandler;
+    private static long mMainThreadId;
+    private static Context mContext;
+    private static Thread mMainThread;
+    private static Looper mMainLooper;
     @Override
     public void onCreate() {
         super.onCreate();
-        EaseUI.getInstance().init(this,null);//初始化
-        EMClient.getInstance().setDebugMode(true);
+        initData();
         Bmob.initialize(this, "fbbf1c539efc20c3a428526d55a9adc1");
     }
-//    private List<Activity> activityList = new LinkedList<Activity>();
+
+    private void initData() {
+        // 上下文
+        mContext = getApplicationContext();
+        // 主线程
+        mMainThread = Thread.currentThread();
+        // 主线程id
+        mMainThreadId = android.os.Process.myTid();
+        // 获取循环器
+        mMainLooper = getMainLooper();
+        // 创建主线程的handler
+        mMainHandler = new Handler();
+    }
+    public static Thread getMainThread() {
+        return mMainThread;
+    }
+    public static Looper getMainThreadLooper() {
+        return mMainLooper;
+    }
+    //    private List<Activity> activityList = new LinkedList<Activity>();
 //    private static MyApplication instance;
 //
 //    private MyApplication() {
@@ -45,4 +68,14 @@ public class MyApplication extends Application {
 //        }
 //        System.exit(0);
 //    }
+public static Context getContext() {
+    return mContext;
+}
+    public static Handler getMainHandler() {
+        return mMainHandler;
+    }
+
+    public static long getMainThreadId() {
+        return mMainThreadId;
+    }
 }
