@@ -67,25 +67,7 @@ public class DoubanDetailActivity extends BaseActivity {
 
         });
         webView.loadUrl(web);
-
-      //  webView.loadDataWithBaseURL("x-data://base",web,"text/html","utf-8",null);
-        //setCollapsingToolbarLayoutTitle(title);
-//        Glide.with(getBaseContext())
-//                .load(url)
-//                .asBitmap()
-//                .placeholder(R.drawable.placeholder)
-//                .centerCrop()
-//                .error(R.drawable.placeholder)
-//                .into(imageView);
     }
-
-//    private void setCollapsingToolbarLayoutTitle(String title) {
-//        toolbarLayout.setTitle(title);
-//        toolbarLayout.setExpandedTitleTextAppearance(R.style.ExpandedAppBar);
-//        toolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppBar);
-//        toolbarLayout.setExpandedTitleTextAppearance(R.style.ExpandedAppBarPlus1);
-//        toolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppBarPlus1);
-//    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -94,12 +76,5 @@ public class DoubanDetailActivity extends BaseActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
-    }
-    private class HelloWebViewClient extends WebViewClient {
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
-        }
     }
 }
