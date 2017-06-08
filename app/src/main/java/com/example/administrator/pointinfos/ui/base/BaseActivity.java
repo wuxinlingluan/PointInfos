@@ -31,6 +31,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected static List<Activity> mActivities = new LinkedList<Activity>();
     private Handler mHandler = new Handler();
 
+
     private ProgressDialog mProgressDialog;
 
     private InputMethodManager mInputMethodManager;
