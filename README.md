@@ -5,7 +5,7 @@
 
 应用截图:
 
-![image](https://github.com/wuxinlingluan/PointInfos/blob/master/app/src/main/res/drawable-hdpi/p3.png) ![image](https://github.com/wuxinlingluan/PointInfos/blob/master/app/src/main/res/drawable/p4.png) ![image](https://github.com/wuxinlingluan/PointInfos/blob/master/app/src/main/res/drawable/p5.png) ![image](https://github.com/wuxinlingluan/PointInfos/blob/master/app/src/main/res/drawable/p6.png)
+![image](https://github.com/wuxinlingluan/PointInfos/blob/master/app/src/main/res/drawable-hdpi/p3.png) ![image](https://github.com/wuxinlingluan/PointInfos/blob/master/app/src/main/res/drawable-hdpi/p4.png) ![image](https://github.com/wuxinlingluan/PointInfos/blob/master/app/src/main/res/drawable-hdpi/p5.png) ![image](https://github.com/wuxinlingluan/PointInfos/blob/master/app/src/main/res/drawable-hdpi/p6.png)
 ### tpis
 本项目还在更新中,如有建议欢迎提交[Issues](https://github.com/wuxinlingluan/PointInfos/issues)  
 或者联系本人QQ 452283765 
