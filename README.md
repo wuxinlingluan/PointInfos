@@ -1,7 +1,7 @@
 # 点点资讯
 
 
-这是使用Mvp+Dagger2+Retrofit+Rxjava写的一个开源,API都是从网上找的,不以盈利为目的,如有侵权请告知.
+这是使用Mvp+Dagger2+Retrofit+Rxjava写的一个开源,部分界面使用Kotlin编写.API都是从网上找的免费的或一些非官方的,不以盈利为目的,如有侵权请告知.
 
 应用截图:
 
