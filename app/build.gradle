@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 //apt插件的使用
 apply plugin: 'com.neenbedankt.android-apt'
-apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 25
     buildToolsVersion '25.0.2'
@@ -74,4 +75,9 @@ dependencies {
     //  compile 'com.github.jrvansuita:MaterialAbout:+'
     testCompile 'junit:junit:4.12'
     apt 'com.google.dagger:dagger-compiler:2.6'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    apply plugin: 'kotlin-android-extensions'
+}
+repositories {
+    mavenCentral()
 }
