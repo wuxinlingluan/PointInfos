@@ -38,11 +38,6 @@
             android:name=".ui.activity.MainActivity"
             android:theme="@style/AppTheme" />
         <activity android:name=".ui.activity.NewsWebActivity" />
-        <!--&lt;!&ndash; 设置环信应用的AppKey &ndash;&gt;-->
-        <!--<meta-data-->
-            <!--android:name="EASEMOB_APPKEY"-->
-            <!--android:value="1122170403178328#pointinfo" />-->
-        <!--&lt;!&ndash; 声明SDK所需的service SDK核心功能 &ndash;&gt;-->
         <activity
             android:name=".ui.activity.LoginActivity"
             android:launchMode="singleTop" />
