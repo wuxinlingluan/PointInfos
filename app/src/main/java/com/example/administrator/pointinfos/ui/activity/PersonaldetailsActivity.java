@@ -43,11 +43,13 @@ public class PersonaldetailsActivity extends BaseActivity {
             case R.id.tv_github:
                 Bundle bundle = new Bundle();
                 bundle.putString("url", "https://github.com/wuxinlingluan");
+                bundle.putString("title", "github地址");
                 IntentUtils.changeActivity(this, NewsWebActivity.class, bundle);
                 break;
             case R.id.tv_prject:
                 Bundle bundle2 = new Bundle();
                 bundle2.putString("url", "https://github.com/wuxinlingluan/PointInfos");
+                bundle2.putString("title", "github地址");
                 IntentUtils.changeActivity(this, NewsWebActivity.class, bundle2);
                 break;
         }

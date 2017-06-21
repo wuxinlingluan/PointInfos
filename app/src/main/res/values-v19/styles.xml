@@ -7,14 +7,15 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:textColorPrimary">#fff</item>
+        <item name="android:textColorPrimary">@color/white</item>
     </style>
-    <style name="ToolbarThemeDouban" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+    <style name="ToolbarThemeDouban" parent="Theme.Design.Light.NoActionBar">
         <item name="colorPrimary">@color/colorAccent</item>
-        <item name="actionMenuTextColor">@color/colorAccent</item> <!--  敲定颜色-->
+        <item name="actionMenuTextColor">@color/qq_red</item> <!--  敲定颜色-->
         <item name="android:colorPrimary">@color/colorAccent</item>
         <item name="colorPrimaryDark">@color/colorAccent</item>
         <item name="android:textSize">18sp</item> <!--  搞掂字体大小-->
+        <item name="android:textColorPrimary">@color/btn_gray_normal</item>
     </style>
 
     <!-- 水平分隔线的统一样式2 -->

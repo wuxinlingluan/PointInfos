@@ -108,9 +108,11 @@ public class WechartFragment extends BaseFragment {
             commonAdapter.setOnItemClickListener(new MultiItemTypeAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
+                    String title = mDatas.get(position).getTitle();
                     String url = mDatas.get(position).getUrl();
                     Bundle bundle = new Bundle();
                     bundle.putString("url", url);
+                    bundle.putString("title", title);
                     IntentUtils.changeActivity(getActivity(), NewsWebActivity.class, bundle);
                 }
 

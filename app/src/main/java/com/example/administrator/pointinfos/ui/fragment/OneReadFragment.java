@@ -103,8 +103,10 @@ public class OneReadFragment extends BaseFragment {
                     @Override
                     public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
                         String share_url = mDatas.get(position).getShare_url();//web页面
+                        String title = mDatas.get(position).getTitle();
                         Bundle bundle = new Bundle();
                         bundle.putString("url", share_url);
+                        bundle.putString("title", title);
                         IntentUtils.changeActivity(getActivity(), NewsWebActivity.class, bundle);
                     }
 

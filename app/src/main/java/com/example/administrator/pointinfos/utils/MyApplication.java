@@ -1,9 +1,10 @@
 package com.example.administrator.pointinfos.utils;
 
-import android.app.Application;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
+
+import com.mob.MobApplication;
 
 import cn.bmob.v3.Bmob;
 
@@ -11,7 +12,7 @@ import cn.bmob.v3.Bmob;
  * Created by ${sheldon} on 2017/4/6.
  */
 
-public class MyApplication extends Application {
+public class MyApplication extends MobApplication {
     private static Handler mMainHandler;
     private static long mMainThreadId;
     private static Context mContext;

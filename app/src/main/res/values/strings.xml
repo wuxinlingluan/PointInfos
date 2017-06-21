@@ -30,4 +30,5 @@
     <string name="about_me">这是我使用MVP+Dagger2+Rxjava+Retrofit的一个开源项目,项目用到的Api都是从网上找的一些免费的,也有一些非官方提供的,不做盈利目的,如有侵权请提示删除.</string>
     <string name="project_addr">github.com/wuxinlingluan/PointInfos</string>
     <string name="github_addr">github.com/wuxinlingluan</string>
+    <string name="share">分享</string>
 </resources>

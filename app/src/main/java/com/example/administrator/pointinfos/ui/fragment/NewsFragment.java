@@ -96,8 +96,10 @@ public class NewsFragment extends BaseFragment {
                 @Override
                 public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
                     String url = mDatas.get(position).getUrl();
+                    String title = mDatas.get(position).getTitle();
                     Bundle bundle = new Bundle();
                     bundle.putString("url", url);
+                    bundle.putString("title", title);
                     IntentUtils.changeActivity(getActivity(), NewsWebActivity.class, bundle);
                 }
 
